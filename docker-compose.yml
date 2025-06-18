@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  zookeeper:
+    image: zookeeper:3.7.0
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    volumes:
+      - zookeeper_data:/data
+      - zookeeper_datalog:/datalog
+
+volumes:
+  zookeeper_data:
+  zookeeper_datalog: 
